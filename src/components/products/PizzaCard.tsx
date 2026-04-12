@@ -6,13 +6,18 @@ type PizzaCardProps = {
 
 export default function PizzaCard({ pizza }: PizzaCardProps) {
   return (
-    <article className="rounded-xl border border-gray-200 p-5 shadow-sm">
+    <article className="rounded-xl border border-gray-200 p-5 shadow-sm transition hover:shadow-md">
       <div className="mb-4 h-40 rounded-lg bg-gray-100"></div>
 
-      <div className="mb-3 flex items-start justify-between gap-4">
-        <h2 className="text-xl font-semibold">{pizza.name}</h2>
+      <div className="mb-3 flex items-center justify-between gap-4">
+        <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
+          {pizza.category}
+        </span>
+
         <span className="text-lg font-bold">€{pizza.price.toFixed(2)}</span>
       </div>
+
+      <h2 className="mb-2 text-xl font-semibold">{pizza.name}</h2>
 
       <p className="mb-4 text-sm text-gray-600">{pizza.description}</p>
 
